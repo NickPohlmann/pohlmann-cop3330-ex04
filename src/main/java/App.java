@@ -16,36 +16,18 @@ public class App {
     public static void main(String[] args) {
         App myApp = new App();
 
-        String noun = myApp.readNoun();
-        String verb = myApp.readVerb();
-        String adjective = myApp.readAdjective();
-        String adverb = myApp.readAdverb();
+        String noun = myApp.readPartOfSpeech("noun");
+        String verb = myApp.readPartOfSpeech("verb");
+        String adjective = myApp.readPartOfSpeech("adjective");
+        String adverb = myApp.readPartOfSpeech("adverb");
         String outputString = myApp.generateOutputString(noun, verb, adjective, adverb);
         myApp.printOutput(outputString);
     }
 
-    private String readNoun() {
-        System.out.print("Enter a noun: ");
-        String noun = in.nextLine();
-        return noun;
-    }
-
-    private String readVerb() {
-        System.out.print("Enter a verb: ");
-        String verb = in.nextLine();
-        return verb;
-    }
-
-    private String readAdjective() {
-        System.out.print("Enter an adjective: ");
-        String adjective = in.nextLine();
-        return adjective;
-    }
-
-    private String readAdverb() {
-        System.out.print("Enter an adverb: ");
-        String adverb = in.nextLine();
-        return adverb;
+    private String readPartOfSpeech(String partOfSpeech) {
+        System.out.print("Enter a " + partOfSpeech + " : ");
+        String inputWord = in.nextLine();
+        return inputWord;
     }
 
     private String generateOutputString(String noun, String verb, String adjective, String adverb) {
